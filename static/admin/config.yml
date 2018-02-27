@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: inkOfPixel/abit
+media_folder: packages/website/static/assets
+public_folder: /assets
+collections:
+  - name: team
+    label: Team
+    label_singular: Team member
+    folder: packages/website/_collections/team
+    create: true
+    fields:
+      - { name: avatar, label: Avatar, widget: image}
+      - { name: title, label: Full name }
+      - { name: role, label: Role }
+      - { name: bio, label: Bio, widget: text }
