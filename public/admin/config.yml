@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: inkOfPixel/abit
+  name: git-gateway
 media_folder: packages/website/static/assets
 public_folder: /assets
 collections:
