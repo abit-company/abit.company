@@ -30,7 +30,7 @@ const Wrapper = styled.footer`
   background-color: #000629;
   margin-top: 60px;
   ${Navigation} {
-    margin-top: 110px;
+    margin-top: 115px;
     @media (max-width: 600px) {
       display: none;
     }
