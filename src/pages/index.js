@@ -11,7 +11,6 @@ import mattiaAvatar from "./assets/mattia-marcon-avatar.png";
 type Props = {
   data: {}
 };
-
 const IndexPage = ({ data }: Props) => (
   <div>
     <Header />
@@ -71,6 +70,15 @@ const Section = styled.section`
   width: 100%;
   padding-top: 60px;
   padding-bottom: 60px;
+  @media (max-width: 1000px) {
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 600px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 const Heading = styled.h2`
@@ -80,6 +88,15 @@ const Heading = styled.h2`
   font-size: 50px;
   color: #0c35fb;
   padding-bottom: 50px;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    font-size: 40px;
+  }
+  @media (max-width: 450px) {
+    font-size: 32px;
+  }
 `;
 
 const Description = styled.p`
@@ -89,6 +106,17 @@ const Description = styled.p`
   font-size: 32px;
   font-weight: 700;
   line-height: 45px;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  @media (max-width: 450px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
 `;
 
 const Team = styled.div`
@@ -96,9 +124,19 @@ const Team = styled.div`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 
   ${TeamMember} {
     flex-basis: 25%;
+    @media (max-width: 800px) {
+      flex-basis: 33%;
+    }
+    @media (max-width: 600px) {
+      flex-basis: 50%;
+      padding: 10px 10px 40px 10px;
+    }
   }
 `;
 
