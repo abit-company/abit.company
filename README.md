@@ -1,13 +1,32 @@
-# gatsby-starter-default
-The default Gatsby starter
+# abit.company :milky_way:
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+This repo contains the source code powering [abit.company](https://abit.company)
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+## Getting started
+
+### Prerequisites
+
+1. Git
+2. Node
+3. Yarn
+
+### Installing
+
+1. `yarn` to install the website's npm dependencies
+
+### Running locally
+
+1. `yarn dev` to start the hot-reloading development server
+2. `open http://localhost:8000` to open the site in your default browser
 
 ## Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Every change pushed to `master` will be deployed to production
+
+## Contributing
+
+### Make a change
+
+1. Create a new branch from `master`
+2. Push your changes to the new branch
+3. Open a PR to trigger a preview deploy on Netlify
