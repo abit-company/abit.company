@@ -30,7 +30,13 @@ const Wrapper = styled.footer`
   background-color: #000629;
   margin-top: 60px;
   ${Navigation} {
-    margin-top: 105px;
+    margin-top: 110px;
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    background-size: cover;
   }
 `;
 
@@ -38,6 +44,16 @@ const Column = styled.div`
   width: 960px;
   margin: 0 auto;
   position: relative;
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 600px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 const Logo = styled.div.attrs({
