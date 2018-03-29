@@ -12,4 +12,5 @@ collections:
       - { name: avatar, label: Avatar, widget: image}
       - { name: title, label: Full name }
       - { name: role, label: Role }
+      - { name: linkedin, label: Linkedin }
       - { name: bio, label: Bio, widget: text }

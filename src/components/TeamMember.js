@@ -2,13 +2,20 @@
 
 import React, { Component } from "react";
 import styled from "styled-components";
+import Linkedin from "./SocialIcon/Linkedin";
 
 type Props = {
-  avatar: string,
-  className: string,
-  fullName: string,
-  role: string,
-  bio: string
+  member: {
+    id: string,
+    frontmatter: {
+      avatar: string,
+      className: string,
+      fullName: string,
+      role: string,
+      bio: string,
+      linkedin: string
+    }
+  }
 };
 
 class TeamMember extends Component<Props> {
@@ -17,10 +24,28 @@ class TeamMember extends Component<Props> {
   };
 
   render() {
-    const { avatar, className, fullName, role, bio } = this.props;
+    const { className } = this.props;
+    const {
+      avatar,
+      title: fullName,
+      role,
+      linkedin,
+      bio
+    } = this.props.member.frontmatter;
     return (
       <Card className={className}>
-        <Avatar src={avatar} alt={`${fullName} avatar`} />
+        <Avatar src={avatar} alt={`${fullName} avatar`}>
+          {typeof linkedin === "string" &&
+            linkedin.length > 0 && (
+              <LinkedinLink
+                href={linkedin}
+                backgroundColor="#0077B5"
+                color="#fff"
+              >
+                <Linkedin />
+              </LinkedinLink>
+            )}
+        </Avatar>
         <FullName>{fullName}</FullName>
         <Role>{role}</Role>
         <Bio>{bio}</Bio>
@@ -34,13 +59,41 @@ const Card = styled.div`
   box-sizing: border-box;
 `;
 
-const Avatar = styled.div.attrs({
-  children: ({ src, alt }) => <img src={src} alt={alt} />
-})`
+const Avatar = styled(({ children, className, src, alt }) => (
+  <div className={className}>
+    <img src={src} alt={alt} />
+    {children}
+  </div>
+))`
   background-color: #f2f2f2;
   border-radius: 10px;
+  position: relative;
   img {
     width: 100%;
+  }
+`;
+
+const LinkedinLink = styled.a`
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  height: 30px;
+  width: 30px;
+  border-radius: 6px;
+  transform: rotate(45deg);
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  transition: 1s all;
+  svg {
+    transition: 1s all;
+    fill: ${({ color }) => color};
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    transform: rotate(360deg);
+    svg {
+      transform: rotate(-360deg);
+    }
   }
 `;
 

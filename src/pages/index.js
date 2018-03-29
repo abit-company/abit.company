@@ -28,19 +28,9 @@ const IndexPage = ({ data }: Props) => (
       <Section>
         <Heading>Team</Heading>
         <Team>
-          {data.allMarkdownRemark.edges.map(
-            ({
-              node: { id, frontmatter: { avatar, title: fullName, bio, role } }
-            }) => (
-              <TeamMember
-                key={id}
-                avatar={avatar}
-                fullName={fullName}
-                role={role}
-                bio={bio}
-              />
-            )
-          )}
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <TeamMember key={node.id} member={node} />
+          ))}
         </Team>
       </Section>
     </ScrollableAnchor>
@@ -176,6 +166,7 @@ export const query = graphql`
             title
             avatar
             role
+            linkedin
             bio
           }
         }
