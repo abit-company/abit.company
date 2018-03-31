@@ -14,6 +14,7 @@ type Props = {
 };
 const IndexPage = ({ data }: Props) => (
   <div>
+    {console.log(data)}
     <Header />
     <ScrollableAnchor id="about-us">
       <Section>
@@ -30,7 +31,7 @@ const IndexPage = ({ data }: Props) => (
         <Heading>Services</Heading>
         <Services>
           {data.allServicesMarkdownRemark.edges.map(({ node }) => (
-            <Service key={node.id} member={node} />
+            <Service key={node.id} service={node} />
           ))}
         </Services>
       </Section>

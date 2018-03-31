@@ -9,8 +9,7 @@ type Props = {
     id: string,
     frontmatter: {
       avatar: string,
-      className: string,
-      fullName: string,
+      title: string,
       role: string,
       bio: string,
       linkedin: string
