@@ -14,3 +14,12 @@ collections:
       - { name: role, label: Role }
       - { name: linkedin, label: Linkedin }
       - { name: bio, label: Bio, widget: text }
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: _collections/services
+    create: true
+    fields:
+      - { name: icon, label: Icon, widget: image}
+      - { name: title, label: Service name }
+      - { name: description, label: Description }
