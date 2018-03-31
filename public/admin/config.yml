@@ -22,4 +22,4 @@ collections:
     fields:
       - { name: icon, label: Icon, widget: image}
       - { name: title, label: Service name }
-      - { name: description, label: Description }
+      - { name: description, label: Description, widget: text }

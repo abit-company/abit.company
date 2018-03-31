@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import Header from "components/Header";
+import Service from "components/Service";
 import TeamMember from "components/TeamMember";
 import Footer from "components/Footer";
 import SocialIcon from "components/SocialIcon";
@@ -24,11 +25,21 @@ const IndexPage = ({ data }: Props) => (
         </Description>
       </Section>
     </ScrollableAnchor>
+    <ScrollableAnchor id="services">
+      <Section>
+        <Heading>Services</Heading>
+        <Services>
+          {data.allServicesMarkdownRemark.edges.map(({ node }) => (
+            <Service key={node.id} member={node} />
+          ))}
+        </Services>
+      </Section>
+    </ScrollableAnchor>
     <ScrollableAnchor id="team">
       <Section>
         <Heading>Team</Heading>
         <Team>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
+          {data.allTeamMarkdownRemark.edges.map(({ node }) => (
             <TeamMember key={node.id} member={node} />
           ))}
         </Team>
@@ -109,6 +120,16 @@ const Description = styled.p`
   }
 `;
 
+const Services = styled.div`
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+`;
+
 const Team = styled.div`
   width: 960px;
   margin: 0 auto;
@@ -158,7 +179,25 @@ export default IndexPage;
 
 export const query = graphql`
   query HomePageQuery {
-    allMarkdownRemark {
+    allServicesMarkdownRemark: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/(/_collections/services)/.*\\.md$/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            icon
+            description
+          }
+        }
+      }
+    }
+    allTeamMarkdownRemark: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(/_collections/team)/.*\\.md$/" } }
+    ) {
       edges {
         node {
           id

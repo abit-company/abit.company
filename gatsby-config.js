@@ -13,6 +13,13 @@ module.exports = {
         name: "team"
       }
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/_collections/services`,
+        name: "services"
+      }
+    },
     "gatsby-transformer-remark"
   ],
   pathPrefix: "/assets"
