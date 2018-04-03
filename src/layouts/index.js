@@ -56,7 +56,7 @@ class TemplateWrapper extends Component<Props> {
           <meta property="og:url" content="/" />
           <meta
             property="og:title"
-            content="abitcomoany - Building the future one bit at a time"
+            content="abitcompany - Building the future one bit at a time"
           />
           <meta
             property="og:description"
