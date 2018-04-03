@@ -11,6 +11,7 @@ const Footer = () => (
       <Logo src={logo} alt="abit company logo" />
       <Navigation>
         <NavigationItem to="#about-us">About us</NavigationItem>
+        <NavigationItem to="#services">Services</NavigationItem>
         <NavigationItem to="#team">Team</NavigationItem>
         <NavigationItem to="#contacts">Contacts</NavigationItem>
       </Navigation>
@@ -31,7 +32,7 @@ const Wrapper = styled.footer`
   margin-top: 60px;
   ${Navigation} {
     margin-top: 115px;
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       display: none;
     }
   }

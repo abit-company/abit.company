@@ -103,6 +103,9 @@ const FullName = styled.p`
   padding-top: 20px;
   width: 100%;
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const Role = styled.p`
@@ -111,6 +114,9 @@ const Role = styled.p`
   color: #000629;
   width: 100%;
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const Bio = styled.p`
@@ -120,6 +126,9 @@ const Bio = styled.p`
   padding-top: 20px;
   width: 100%;
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 export default styled(TeamMember)``;

@@ -3,6 +3,7 @@
 import React, { type Node, Component } from "react";
 import Helmet from "react-helmet";
 import { injectGlobal } from "styled-components";
+import favicon from "../images/abitcompany - Logo.png";
 import "normalize.css";
 
 injectGlobal`
@@ -41,9 +42,16 @@ class TemplateWrapper extends Component<Props> {
     return (
       <div>
         <Helmet>
-          <title>abit.company</title>
-          <meta name="description" content="Sample" />
-          <meta name="keywords" content="Sample, something" />
+          <link rel="icon" href={favicon} type="image/png" />
+          <title>abitcompany</title>
+          <meta
+            name="description"
+            content="We love to solve the hardest problems, providing comprehensive blockchain solutions dealing with technology, marketing, legal and finance matters. We embrace each project with full commitment, and we treat them as our very own."
+          />
+          <meta
+            name="keywords"
+            content="ico,blockchain,bitcoin,technology,marketing,legal,finance"
+          />
           <script src="https://wchat.freshchat.com/js/widget.js" />
         </Helmet>
         {children()}

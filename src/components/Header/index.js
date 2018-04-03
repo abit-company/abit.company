@@ -11,6 +11,7 @@ const Header = () => (
       <Logo src={logo} alt="abit company logo" />
       <Navigation>
         <NavigationItem to="#about-us">About us</NavigationItem>
+        <NavigationItem to="#services">Services</NavigationItem>
         <NavigationItem to="#team">Team</NavigationItem>
         <NavigationItem to="#contacts">Contacts</NavigationItem>
       </Navigation>
@@ -28,7 +29,7 @@ const Wrapper = styled.header`
   background-repeat: no-repeat;
   ${Navigation} {
     margin-top: 50px;
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       display: none;
     }
   }

@@ -20,9 +20,10 @@ const IndexPage = ({ data }: Props) => (
       <Section>
         <Heading>About us</Heading>
         <Description>
-          We are group of people united by the passion towards technologies.
-          <br />We are always looking to the future trying to build better
-          products everyday
+          We love to solve the hardest problems, providing comprehensive
+          blockchain solutions dealing with technology, marketing, legal and
+          finance matters.<br /> We embrace each project with full commitment,
+          and we treat them as our very own.
         </Description>
       </Section>
     </ScrollableAnchor>
