@@ -15,14 +15,7 @@ const Footer = () => (
         <NavigationItem to="#team">Team</NavigationItem>
         <NavigationItem to="#contacts">Contacts</NavigationItem>
       </Navigation>
-      <CompanyInfo>
-        abitcompany Srl<br />
-        Capital €10200 i.v.<br />
-        Piazza Castello n. 26<br />
-        20121 Milano<br />
-        VAT Number 09287730965<br />
-        REA MI - 2081233
-      </CompanyInfo>
+      <CompanyInfo>abitcompany</CompanyInfo>
     </Column>
   </Wrapper>
 );
