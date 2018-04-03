@@ -78,8 +78,8 @@ const Section = styled.section`
     box-sizing: border-box;
   }
   @media (max-width: 600px) {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `;
 
