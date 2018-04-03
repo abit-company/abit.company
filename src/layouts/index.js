@@ -4,6 +4,7 @@ import React, { type Node, Component } from "react";
 import Helmet from "react-helmet";
 import { injectGlobal } from "styled-components";
 import favicon from "../images/abitcompany - Logo.png";
+import ogImage from "../images/abitcompany - og_image.jpg";
 import "normalize.css";
 
 injectGlobal`
@@ -52,6 +53,17 @@ class TemplateWrapper extends Component<Props> {
             name="keywords"
             content="ico,blockchain,bitcoin,technology,marketing,legal,finance"
           />
+          <meta property="og:url" content="/" />
+          <meta
+            property="og:title"
+            content="abitcomoany - Building the future one bit at a time"
+          />
+          <meta
+            property="og:description"
+            content="We love to solve the hardest problems, providing comprehensive blockchain solutions dealing with technology, marketing, legal and finance matters."
+          />
+          <meta property="og:image" content={ogImage} />
+
           <script src="https://wchat.freshchat.com/js/widget.js" />
         </Helmet>
         {children()}
