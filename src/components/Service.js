@@ -47,6 +47,13 @@ const IconContainer = styled.div`
   padding: 20px 20px 20px 20px;
   box-sizing: border-box;
   flex-basis: 25%;
+  @media (max-width: 800px) {
+    flex-basis: 33.33%;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    flex-basis: 50%;
+  }
 `;
 
 const Icon = styled(({ children, className, src, alt }) => (
@@ -68,6 +75,16 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  @media (max-width: 960px) {
+    flex-basis: 75%;
+  }
+  @media (max-width: 800px) {
+    flex-basis: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+  }
 `;
 
 const Name = styled.p`
