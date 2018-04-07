@@ -1,4 +1,5 @@
 ---
+index: '5'
 avatar: /assets/jacopo-ranalli-avatar.png
 title: Jacopo Ranalli
 role: Business Developer
