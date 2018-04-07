@@ -1,4 +1,5 @@
 ---
+index: '2'
 icon: /assets/abitcompany - services_ico.png
 title: ICO Launch
 description: >-
