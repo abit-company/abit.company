@@ -1,4 +1,5 @@
 ---
+index: '7'
 avatar: /assets/massimo-de-marchi-avatar.png
 title: Massimo De Marchi
 role: Software Engineer
