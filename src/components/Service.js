@@ -7,6 +7,7 @@ type Props = {
   service: {
     id: string,
     frontmatter: {
+      index: number,
       title: string,
       iconUrl: string,
       description: string
@@ -16,7 +17,7 @@ type Props = {
 
 const Service = ({
   className,
-  service: { id, frontmatter: { icon, title: name, description } }
+  service: { id, frontmatter: { index, icon, title: name, description } }
 }: Props) => (
   <Wrapper className={className}>
     <IconContainer>

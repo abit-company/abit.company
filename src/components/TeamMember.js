@@ -8,6 +8,7 @@ type Props = {
   member: {
     id: string,
     frontmatter: {
+      index: number,
       avatar: string,
       title: string,
       role: string,
@@ -25,6 +26,7 @@ class TeamMember extends Component<Props> {
   render() {
     const { className } = this.props;
     const {
+      index,
       avatar,
       title: fullName,
       role,

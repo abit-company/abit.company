@@ -185,11 +185,13 @@ export const query = graphql`
       filter: {
         fileAbsolutePath: { regex: "/(/_collections/services)/.*\\.md$/" }
       }
+      sort: { order: ASC, fields: [frontmatter___index] }
     ) {
       edges {
         node {
           id
           frontmatter {
+            index
             title
             icon
             description
@@ -199,6 +201,7 @@ export const query = graphql`
     }
     allTeamMarkdownRemark: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/(/_collections/team)/.*\\.md$/" } }
+      sort: { order: ASC, fields: [frontmatter___index] }
     ) {
       edges {
         node {
