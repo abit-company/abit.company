@@ -1,4 +1,5 @@
 ---
+index: '1'
 avatar: /assets/raffaele-bianchi-avatar.png
 title: Raffaele Bianchi
 role: CEO
