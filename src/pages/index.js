@@ -61,8 +61,18 @@ const IndexPage = ({ data }: Props) => (
           <SocialLink href="https://twitter.com/abitfund">
             <SocialIcon type="twitter" color="#fff" backgroundColor="#1DA1F2" />
           </SocialLink>
+          <SocialLink href="https://www.linkedin.com/company/abitcompany/">
+            <SocialIcon
+              type="linkedin"
+              color="#fff"
+              backgroundColor="#0077B5"
+            />
+          </SocialLink>
+          <SocialLink href="https://medium.com/abitcompany">
+            <SocialIcon type="medium" color="#fff" backgroundColor="#1C1B1A" />
+          </SocialLink>
         </SocialList>
-        <EmailLink>info@abit.company</EmailLink>
+        <EmailLink href="mailto:info@abit.company">info@abit.company</EmailLink>
       </Section>
     </ScrollableAnchor>
     <Footer />
@@ -153,9 +163,7 @@ const Team = styled.div`
   }
 `;
 
-const EmailLink = styled.a.attrs({
-  href: ({ email }) => `mailto:${email}`
-})`
+const EmailLink = styled.a`
   text-align: center;
   width: 100%;
   display: block;

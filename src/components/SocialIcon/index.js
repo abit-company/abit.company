@@ -4,9 +4,11 @@ import React from "react";
 import styled from "styled-components";
 import Facebook from "./Facebook";
 import Twitter from "./Twitter";
+import Linkedin from "./Linkedin";
+import Medium from "./Medium";
 
 type Props = {
-  type: "facebook" | "twitter",
+  type: "facebook" | "twitter" | "linkedin" | "medium",
   backgroundColor: string,
   color: string
 };
@@ -29,15 +31,27 @@ const SocialIcon = ({
           <Twitter />
         </Wrapper>
       );
+    case "linkedin":
+      return (
+        <Wrapper backgroundColor={backgroundColor} color={color}>
+          <Linkedin />
+        </Wrapper>
+      );
+    case "medium":
+      return (
+        <Wrapper backgroundColor={backgroundColor} color={color}>
+          <Medium />
+        </Wrapper>
+      );
     default:
       return null;
   }
 };
 
 const Wrapper = styled.div`
-  height: 50px;
-  width: 50px;
-  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
   transform: rotate(45deg);
   background-color: ${({ backgroundColor }) => backgroundColor};
   transition: 1s all;
