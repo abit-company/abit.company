@@ -1,4 +1,5 @@
 ---
+index: '1'
 icon: /assets/abitcompany - services_blockchain.png
 title: Blockchain to go
 description: >-
