@@ -1,4 +1,5 @@
 ---
+index: '6'
 avatar: /assets/mattia-marcon-avatar.png
 title: Mattia Marcon
 role: UX / UI Designer
