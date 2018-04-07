@@ -1,4 +1,5 @@
 ---
+index: '4'
 icon: /assets/abitcompany - services_academy.png
 title: Academy
 description: >-
