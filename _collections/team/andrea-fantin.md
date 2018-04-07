@@ -1,4 +1,5 @@
 ---
+index: '2'
 avatar: /assets/andrea-fantin-avatar.png
 title: Andrea Fantin
 role: CFO
