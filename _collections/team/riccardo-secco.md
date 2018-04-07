@@ -1,4 +1,5 @@
 ---
+index: '4'
 avatar: /assets/riccardo-secco-avatar.png
 title: Riccardo Secco
 role: Marketing Manager
