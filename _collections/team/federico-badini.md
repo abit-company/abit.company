@@ -1,4 +1,5 @@
 ---
+index: '8'
 avatar: /assets/federico-badini-avatar.png
 title: Federico Badini
 role: Software Engineer
