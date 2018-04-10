@@ -7,7 +7,6 @@ import TeamMember from "components/TeamMember";
 import Footer from "components/Footer";
 import SocialIcon from "components/SocialIcon";
 import ScrollableAnchor from "react-scrollable-anchor";
-import mattiaAvatar from "./assets/mattia-marcon-avatar.png";
 
 type Props = {
   data: {}
