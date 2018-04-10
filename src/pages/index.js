@@ -14,7 +14,6 @@ type Props = {
 };
 const IndexPage = ({ data }: Props) => (
   <div>
-    {console.log(data)}
     <Header />
     <ScrollableAnchor id="about-us">
       <Section>
@@ -51,28 +50,28 @@ const IndexPage = ({ data }: Props) => (
       <Section>
         <Heading>Contacts</Heading>
         <SocialList>
-          <SocialLink href="https://www.facebook.com/abitfund">
+          <SocialLink target="_blank" href="https://www.facebook.com/abitcompany">
             <SocialIcon
               type="facebook"
               color="#fff"
               backgroundColor="#3B5998"
             />
           </SocialLink>
-          <SocialLink href="https://twitter.com/abitfund">
+          <SocialLink target="_blank" href="https://twitter.com/abitcompany">
             <SocialIcon type="twitter" color="#fff" backgroundColor="#1DA1F2" />
           </SocialLink>
-          <SocialLink href="https://www.linkedin.com/company/abitcompany/">
+          <SocialLink target="_blank" href="https://www.linkedin.com/company/abitcompany/">
             <SocialIcon
               type="linkedin"
               color="#fff"
               backgroundColor="#0077B5"
             />
           </SocialLink>
-          <SocialLink href="https://medium.com/abitcompany">
+          <SocialLink target="_blank" href="https://medium.com/abitcompany">
             <SocialIcon type="medium" color="#fff" backgroundColor="#1C1B1A" />
           </SocialLink>
         </SocialList>
-        <EmailLink href="mailto:info@abit.company">info@abit.company</EmailLink>
+        <EmailLink target="_blank" href="mailto:info@abit.company">info@abit.company</EmailLink>
       </Section>
     </ScrollableAnchor>
     <Footer />

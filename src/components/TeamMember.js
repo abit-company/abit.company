@@ -39,6 +39,7 @@ class TeamMember extends Component<Props> {
           {typeof linkedin === "string" &&
             linkedin.length > 0 && (
               <LinkedinLink
+                target="_blank"
                 href={linkedin}
                 backgroundColor="#0077B5"
                 color="#fff"
