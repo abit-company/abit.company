@@ -15,7 +15,9 @@ const Footer = () => (
         <NavigationItem to="#team">Team</NavigationItem>
         <NavigationItem to="#contacts">Contacts</NavigationItem>
       </Navigation>
-      <CompanyInfo>abitcompany</CompanyInfo>
+      { /*<CompanyInfo>abitcompany</CompanyInfo> */}
+      <Copyright>© 2018 abitcompany</Copyright>
+
     </Column>
   </Wrapper>
 );
@@ -68,5 +70,16 @@ const CompanyInfo = styled.div`
   line-height: 24px;
   font-weight: 700;
 `;
+
+
+const Copyright = styled.div`
+  color: #fff;
+  letter-spacing: 0.06em;
+  line-height: 24px;
+  font-weight: 300;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  text-align: center;
+`
 
 export default Footer;
