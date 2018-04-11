@@ -64,6 +64,7 @@ class TemplateWrapper extends Component<Props> {
             content="website" 
           />
           <meta property="og:image" content="https://abit.company/abitcompany_logo.png" />
+          
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@abitcompany" />
           <meta name="twitter:creator" content="@abitcompany" />
