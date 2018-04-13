@@ -44,7 +44,8 @@ class TemplateWrapper extends Component<Props> {
           <title>abitcompany</title>
           <meta
             name="description"
-            content="Building the future one bit at a time"
+            content="We love to solve the hardest problems, providing comprehensive blockchain solutions dealing with technology, marketing, legal and finance matters.
+            We embrace each project with full commitment, and we treat them as our very own."
           />
           <meta
             name="keywords"
@@ -52,12 +53,17 @@ class TemplateWrapper extends Component<Props> {
           />
           <meta property="og:url" content="https://abit.company/" />
           <meta
-            property="og:title"
+            property="og:site_name"
             content="abitcompany"
           />
           <meta
-            property="og:description"
+            property="og:title"
             content="Building the future one bit at a time"
+          />
+          <meta
+            property="og:description"
+            content="We love to solve the hardest problems, providing comprehensive blockchain solutions dealing with technology, marketing, legal and finance matters.
+            We embrace each project with full commitment, and we treat them as our very own."
           />
           <meta
             property="og:type"
@@ -90,6 +96,19 @@ class TemplateWrapper extends Component<Props> {
           <meta name="msapplication-TileColor" content="#ffffff"/>
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
           <meta name="theme-color" content="#ffffff"/>
+          <script type="application/ld+json">{`
+          {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "abitcompany",
+            "url": "http://abit.company",
+            "sameAs": [
+              "http://www.facebook.com/abitcompany",
+              "http://www.linkedin.com/company/18563667/",
+              "https://twitter.com/abitcompany"
+            ]
+          }
+          `}</script>
         </Helmet>
         {children()}
       </div>
