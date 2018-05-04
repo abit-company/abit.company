@@ -67,7 +67,16 @@ const IndexPage = ({ data }: Props) => (
             />
           </SocialLink>
           <SocialLink target="_blank" href="https://medium.com/abitcompany">
-            <SocialIcon type="medium" color="#fff" backgroundColor="#1C1B1A" />
+            <SocialIcon
+              type="medium"
+              color="#fff"
+              backgroundColor="#1C1B1A" />
+          </SocialLink>
+          <SocialLink target="_blank" href="https://github.com/abit-company">
+            <SocialIcon
+              type="github"
+              color="#fff"
+              backgroundColor="#191717" />
           </SocialLink>
         </SocialList>
         <EmailLink target="_blank" href="mailto:info@abit.company">info@abit.company</EmailLink>

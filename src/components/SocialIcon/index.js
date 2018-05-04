@@ -6,6 +6,8 @@ import Facebook from "./Facebook";
 import Twitter from "./Twitter";
 import Linkedin from "./Linkedin";
 import Medium from "./Medium";
+import Github from "./Github";
+
 
 type Props = {
   type: "facebook" | "twitter" | "linkedin" | "medium",
@@ -41,6 +43,12 @@ const SocialIcon = ({
       return (
         <Wrapper backgroundColor={backgroundColor} color={color}>
           <Medium />
+        </Wrapper>
+      );
+      case "github":
+      return (
+        <Wrapper backgroundColor={backgroundColor} color={color}>
+          <Github />
         </Wrapper>
       );
     default:
