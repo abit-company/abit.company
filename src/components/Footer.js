@@ -16,7 +16,7 @@ const Footer = () => (
         <NavigationItem to="#contacts">Contacts</NavigationItem>
       </Navigation>
       { /*<CompanyInfo>abitcompany</CompanyInfo> */}
-      <Copyright>© 2018 abitcompany</Copyright>
+      <Copyright>© 2018 abitcompany - P.I.:  02928220306</Copyright>
 
     </Column>
   </Wrapper>
