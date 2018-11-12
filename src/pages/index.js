@@ -7,6 +7,7 @@ import TeamMember from "components/TeamMember";
 import Footer from "components/Footer";
 import SocialIcon from "components/SocialIcon";
 import ScrollableAnchor from "react-scrollable-anchor";
+import SubscriptionForm from "../components/SubscriptionForm";
 
 type Props = {
   data: {}
@@ -27,7 +28,7 @@ const IndexPage = ({ data }: Props) => (
     </ScrollableAnchor>
     <ScrollableAnchor id="services">
       <Section>
-        <Heading>Services</Heading>
+        <Heading>What we do</Heading>
         <Services>
           {data.allServicesMarkdownRemark.edges.map(({ node }) => (
             <Service key={node.id} service={node} />
@@ -49,7 +50,10 @@ const IndexPage = ({ data }: Props) => (
       <Section>
         <Heading>Contacts</Heading>
         <SocialList>
-          <SocialLink target="_blank" href="https://www.facebook.com/abitcompany">
+          <SocialLink
+            target="_blank"
+            href="https://www.facebook.com/abitcompany"
+          >
             <SocialIcon
               type="facebook"
               color="#fff"
@@ -59,7 +63,10 @@ const IndexPage = ({ data }: Props) => (
           <SocialLink target="_blank" href="https://twitter.com/abitcompany">
             <SocialIcon type="twitter" color="#fff" backgroundColor="#1DA1F2" />
           </SocialLink>
-          <SocialLink target="_blank" href="https://www.linkedin.com/company/abitcompany/">
+          <SocialLink
+            target="_blank"
+            href="https://www.linkedin.com/company/abitcompany/"
+          >
             <SocialIcon
               type="linkedin"
               color="#fff"
@@ -67,24 +74,27 @@ const IndexPage = ({ data }: Props) => (
             />
           </SocialLink>
           <SocialLink target="_blank" href="https://medium.com/abitcompany">
-            <SocialIcon
-              type="medium"
-              color="#fff"
-              backgroundColor="#1C1B1A" />
+            <SocialIcon type="medium" color="#fff" backgroundColor="#1C1B1A" />
           </SocialLink>
           <SocialLink target="_blank" href="https://github.com/abit-company">
-            <SocialIcon
-              type="github"
-              color="#fff"
-              backgroundColor="#191717" />
+            <SocialIcon type="github" color="#fff" backgroundColor="#191717" />
           </SocialLink>
         </SocialList>
-        <EmailLink target="_blank" href="mailto:info@abit.company">info@abit.company</EmailLink>
+        <EmailLink target="_blank" href="mailto:info@abit.company">
+          info@abit.company
+        </EmailLink>
       </Section>
     </ScrollableAnchor>
     <Footer />
   </div>
 );
+
+const SubscriptionContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 40px 0;
+`;
 
 const Section = styled.section`
   width: 100%;
@@ -153,6 +163,7 @@ const Team = styled.div`
   width: 960px;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   @media (max-width: 1000px) {
     width: 100%;

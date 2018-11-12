@@ -89,7 +89,7 @@ const TextContainer = styled.div`
 `;
 
 const Name = styled.p`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: #0c35fb;
   width: 100%;
