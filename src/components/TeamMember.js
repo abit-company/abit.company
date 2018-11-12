@@ -1,72 +1,40 @@
-// @flow
+import React from 'react';
+import styled from 'styled-components';
+import { Linkedin } from './Icons';
 
-import React, { Component } from "react";
-import styled from "styled-components";
-import Linkedin from "./SocialIcon/Linkedin";
-
-type Props = {
-  member: {
-    id: string,
-    frontmatter: {
-      index: number,
-      avatar: string,
-      title: string,
-      role: string,
-      bio: string,
-      linkedin: string
-    }
-  }
-};
-
-class TeamMember extends Component<Props> {
-  static defaultProps = {
-    className: ""
-  };
-
-  render() {
-    const { className } = this.props;
-    const {
-      index,
-      avatar,
-      title: fullName,
-      role,
-      linkedin,
-      bio
-    } = this.props.member.frontmatter;
-    return (
-      <Card className={className}>
-        <Avatar src={avatar} alt={`${fullName} avatar`}>
-          {typeof linkedin === "string" &&
-            linkedin.length > 0 && (
-              <LinkedinLink
-                target="_blank"
-                href={linkedin}
-                backgroundColor="#0077B5"
-                color="#fff"
-              >
-                <Linkedin />
-              </LinkedinLink>
-            )}
-        </Avatar>
-        <FullName>{fullName}</FullName>
-        <Role>{role}</Role>
-        <Bio>{bio}</Bio>
-      </Card>
-    );
-  }
-}
+const TeamMember = ({ avatar, name, role, bio, linkedin }) => (
+  <Card>
+    <Avatar>
+      <img src={`../img/${avatar}`} alt={`${name} avatar`} />
+      <LinkedinLink
+        target="_blank"
+        href={linkedin}
+        backgroundColor="#0077B5"
+        color="#fff"
+      >
+        <Linkedin />
+      </LinkedinLink>
+    </Avatar>
+    <FullName>{name}</FullName>
+    <Role>{role}</Role>
+    <Bio>{bio}</Bio>
+  </Card>
+);
 
 const Card = styled.div`
   padding: 20px 20px 40px 20px;
   box-sizing: border-box;
+    max-width: 25%;
+    @media (max-width: 800px) {
+      max-width: 33%;
+    }
+    @media (max-width: 600px) {
+      max-width: 50%;
+      padding: 10px 10px 40px 10px;
+    }
 `;
 
-const Avatar = styled(({ children, className, src, alt }) => (
-  <div className={className}>
-    <img src={src} alt={alt} />
-    {children}
-  </div>
-))`
+const Avatar = styled.div`
   background-color: #f2f2f2;
   border-radius: 10px;
   position: relative;
@@ -134,4 +102,4 @@ const Bio = styled.p`
   }
 `;
 
-export default styled(TeamMember)``;
+export default TeamMember;

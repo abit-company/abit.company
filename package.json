@@ -1,39 +1,41 @@
 {
   "name": "abit.company",
-  "description": "abit company website",
-  "version": "0.0.0",
+  "description": "abitcompany website",
+  "version": "0.2.0",
   "private": true,
-  "dependencies": {
-    "gatsby": "1.9.207",
-    "gatsby-cli": "1.1.44",
-    "gatsby-link": "1.6.37",
-    "gatsby-plugin-google-analytics": "^1.0.28",
-    "gatsby-plugin-netlify-cms": "1.0.10",
-    "gatsby-plugin-react-helmet": "2.0.5",
-    "gatsby-plugin-styled-components": "2.0.8",
-    "gatsby-react-router-scroll": "1.0.11",
-    "gatsby-source-filesystem": "1.5.24",
-    "gatsby-transformer-remark": "1.7.33",
-    "normalize.css": "8.0.0",
-    "react-helmet": "5.2.0",
-    "react-scrollable-anchor": "0.6.1",
-    "styled-components": "3.1.6"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "gatsby": "2.0.45",
+    "gatsby-image": "2.0.20",
+    "gatsby-plugin-google-analytics": "2.0.7",
+    "gatsby-plugin-manifest": "2.0.9",
+    "gatsby-plugin-react-helmet": "3.0.1",
+    "gatsby-plugin-robots-txt": "^1.3.0",
+    "gatsby-plugin-sharp": "2.0.12",
+    "gatsby-plugin-sitemap": "^2.0.2",
+    "gatsby-plugin-styled-components": "3.0.1",
+    "gatsby-source-filesystem": "2.0.8",
+    "gatsby-transformer-sharp": "2.1.8",
+    "normalize.css": "^8.0.1",
+    "react": "16.6.1",
+    "react-dom": "16.6.1",
+    "react-helmet": "5.2.0",
+    "react-scrollable-anchor": "0.6.1",
+    "styled-components": "4.0.3"
+  },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.5.1",
-    "babel-preset-flow": "6.23.0",
-    "flow-bin": "0.66.0",
-    "prettier": "1.10.2",
-    "webfontloader": "1.6.28"
+    "babel-eslint": "10.0.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "gatsby-plugin-eslint": "2.0.1",
+    "prettier": "1.15.2"
   }
 }

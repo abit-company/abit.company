@@ -1,9 +1,8 @@
-import React from "react";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import logo from "images/logo.svg";
-import Navigation, { NavigationItem } from "components/Navigation";
-import headerIllustration from "./header-illustration.svg";
+import React from 'react';
+import styled from 'styled-components';
+import logo from '../../img/abitcompany-logo.svg';
+import Navigation, { NavigationItem } from '../Navigation';
+import hero from './hero.svg';
 
 const Header = () => (
   <Wrapper>
@@ -24,7 +23,7 @@ const Header = () => (
 
 const Wrapper = styled.header`
   background-color: #000629;
-  background-image: url("${headerIllustration}");
+  background-image: url("${hero}");
   background-position: right;
   background-repeat: no-repeat;
   ${Navigation} {
@@ -54,9 +53,7 @@ const Column = styled.div`
   }
 `;
 
-const Logo = styled.div.attrs({
-  children: ({ src, alt }) => <img src={src} alt={alt} />
-})`
+const Logo = styled.img`
   width: 220px;
   padding-top: 40px;
   img {

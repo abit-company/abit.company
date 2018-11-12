@@ -1,54 +1,37 @@
-// @flow
+import React from 'react';
+import styled from 'styled-components';
+import { Facebook, Twitter, Linkedin, Medium, GitHub } from './Icons';
 
-import React from "react";
-import styled from "styled-components";
-import Facebook from "./Facebook";
-import Twitter from "./Twitter";
-import Linkedin from "./Linkedin";
-import Medium from "./Medium";
-import Github from "./Github";
-
-
-type Props = {
-  type: "facebook" | "twitter" | "linkedin" | "medium",
-  backgroundColor: string,
-  color: string
-};
-
-const SocialIcon = ({
-  backgroundColor = "#000",
-  color = "#fff",
-  type
-}: Props) => {
+const SocialIcon = ({ backgroundColor = '#000', color = '#fff', type }) => {
   switch (type) {
-    case "facebook":
+    case 'facebook':
       return (
         <Wrapper backgroundColor={backgroundColor} color={color}>
           <Facebook />
         </Wrapper>
       );
-    case "twitter":
+    case 'twitter':
       return (
         <Wrapper backgroundColor={backgroundColor} color={color}>
           <Twitter />
         </Wrapper>
       );
-    case "linkedin":
+    case 'linkedin':
       return (
         <Wrapper backgroundColor={backgroundColor} color={color}>
           <Linkedin />
         </Wrapper>
       );
-    case "medium":
+    case 'medium':
       return (
         <Wrapper backgroundColor={backgroundColor} color={color}>
           <Medium />
         </Wrapper>
       );
-      case "github":
+    case 'github':
       return (
         <Wrapper backgroundColor={backgroundColor} color={color}>
-          <Github />
+          <GitHub />
         </Wrapper>
       );
     default:

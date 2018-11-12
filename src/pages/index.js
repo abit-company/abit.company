@@ -1,90 +1,89 @@
-import React, { Fragment } from "react";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import Header from "components/Header";
-import Service from "components/Service";
-import TeamMember from "components/TeamMember";
-import Footer from "components/Footer";
-import SocialIcon from "components/SocialIcon";
-import ScrollableAnchor from "react-scrollable-anchor";
+import React from 'react';
+import styled from 'styled-components';
+import Service from '../components/Service';
+import TeamMember from '../components/TeamMember';
+import SocialIcon from '../components/SocialIcon';
+// import ScrollableAnchor from 'react-scrollable-anchor';
+import team from '../team';
+import services from '../services';
+import Layout from '../components/Layout';
+import SubscriptionForm from '../components/SubscriptionForm';
 
-type Props = {
-  data: {}
-};
-const IndexPage = ({ data }: Props) => (
-  <div>
-    <Header />
-    <ScrollableAnchor id="about-us">
-      <Section>
-        <Heading>About us</Heading>
-        <Description>
-          We love to solve the hardest problems, providing comprehensive
-          blockchain solutions dealing with technology, marketing, legal and
-          finance matters.<br /> We embrace each project with full commitment,
-          and we treat them as our very own.
-        </Description>
-      </Section>
-    </ScrollableAnchor>
-    <ScrollableAnchor id="services">
-      <Section>
-        <Heading>Services</Heading>
-        <Services>
-          {data.allServicesMarkdownRemark.edges.map(({ node }) => (
-            <Service key={node.id} service={node} />
-          ))}
-        </Services>
-      </Section>
-    </ScrollableAnchor>
-    <ScrollableAnchor id="team">
-      <Section>
-        <Heading>Team</Heading>
-        <Team>
-          {data.allTeamMarkdownRemark.edges.map(({ node }) => (
-            <TeamMember key={node.id} member={node} />
-          ))}
-        </Team>
-      </Section>
-    </ScrollableAnchor>
-    <ScrollableAnchor id="contacts">
-      <Section>
-        <Heading>Contacts</Heading>
-        <SocialList>
-          <SocialLink target="_blank" href="https://www.facebook.com/abitcompany">
-            <SocialIcon
-              type="facebook"
-              color="#fff"
-              backgroundColor="#3B5998"
-            />
-          </SocialLink>
-          <SocialLink target="_blank" href="https://twitter.com/abitcompany">
-            <SocialIcon type="twitter" color="#fff" backgroundColor="#1DA1F2" />
-          </SocialLink>
-          <SocialLink target="_blank" href="https://www.linkedin.com/company/abitcompany/">
-            <SocialIcon
-              type="linkedin"
-              color="#fff"
-              backgroundColor="#0077B5"
-            />
-          </SocialLink>
-          <SocialLink target="_blank" href="https://medium.com/abitcompany">
-            <SocialIcon
-              type="medium"
-              color="#fff"
-              backgroundColor="#1C1B1A" />
-          </SocialLink>
-          <SocialLink target="_blank" href="https://github.com/abit-company">
-            <SocialIcon
-              type="github"
-              color="#fff"
-              backgroundColor="#191717" />
-          </SocialLink>
-        </SocialList>
-        <EmailLink target="_blank" href="mailto:info@abit.company">info@abit.company</EmailLink>
-      </Section>
-    </ScrollableAnchor>
-    <Footer />
-  </div>
+const IndexPage = () => (
+  <Layout>
+    {/* <ScrollableAnchor id="about-us" key="about-us"> */}
+    <Section>
+      <Heading>About us</Heading>
+      <Description>
+        We love to solve the hardest problems, providing comprehensive
+        blockchain solutions dealing with technology, marketing, legal and
+        finance matters.
+        <br /> We embrace each project with full commitment, and we treat them
+        as our very own.
+      </Description>
+    </Section>
+    {/* </ScrollableAnchor> */}
+    {/* <ScrollableAnchor id="services" key="services"> */}
+    <Section>
+      <Heading>Services</Heading>
+      <Services>
+        {services.map((service, id) => <Service key={id} {...service} />)}
+      </Services>
+    </Section>
+    {/* </ScrollableAnchor> */}
+    {/* <ScrollableAnchor id="team" key="team"> */}
+    <Section>
+      <Heading>Team</Heading>
+      <TeamContainer>
+        {team.map((member, id) => <TeamMember key={id} {...member} />)}
+      </TeamContainer>
+    </Section>
+    {/* </ScrollableAnchor> */}
+    {/* <ScrollableAnchor id="contacts" key="contacts"> */}
+    <Section>
+      <Heading>Contacts</Heading>
+      <SocialList>
+        <SocialLink target="_blank" href="https://www.facebook.com/abitcompany">
+          <SocialIcon type="facebook" color="#fff" backgroundColor="#3B5998" />
+        </SocialLink>
+        <SocialLink target="_blank" href="https://twitter.com/abitcompany">
+          <SocialIcon type="twitter" color="#fff" backgroundColor="#1DA1F2" />
+        </SocialLink>
+        <SocialLink
+          target="_blank"
+          href="https://www.linkedin.com/company/abitcompany/"
+        >
+          <SocialIcon type="linkedin" color="#fff" backgroundColor="#0077B5" />
+        </SocialLink>
+        <SocialLink target="_blank" href="https://medium.com/abitcompany">
+          <SocialIcon type="medium" color="#fff" backgroundColor="#1C1B1A" />
+        </SocialLink>
+        <SocialLink target="_blank" href="https://github.com/abit-company">
+          <SocialIcon type="github" color="#fff" backgroundColor="#191717" />
+        </SocialLink>
+      </SocialList>
+      <CenterContainer>
+        <EmailLink target="_blank" href="mailto:info@abit.company">
+          info@abit.company
+        </EmailLink>
+      </CenterContainer>
+      <SubscriptionContainer>
+        <SubscriptionForm />
+      </SubscriptionContainer>
+    </Section>
+    {/* </ScrollableAnchor> */}
+  </Layout>
 );
+
+const CenterContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`;
+
+const SubscriptionContainer = styled(CenterContainer)`
+  margin: 40px 0;
+`;
 
 const Section = styled.section`
   width: 100%;
@@ -149,30 +148,19 @@ const Services = styled.div`
   }
 `;
 
-const Team = styled.div`
+const TeamContainer = styled.div`
   width: 960px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   @media (max-width: 1000px) {
     width: 100%;
-  }
-
-  ${TeamMember} {
-    flex-basis: 25%;
-    @media (max-width: 800px) {
-      flex-basis: 33%;
-    }
-    @media (max-width: 600px) {
-      flex-basis: 50%;
-      padding: 10px 10px 40px 10px;
-    }
   }
 `;
 
 const EmailLink = styled.a`
   text-align: center;
-  width: 100%;
   display: block;
   text-decoration: none;
   color: #000629;
@@ -193,43 +181,3 @@ const SocialLink = styled.a`
 `;
 
 export default IndexPage;
-
-export const query = graphql`
-  query HomePageQuery {
-    allServicesMarkdownRemark: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(/_collections/services)/.*\\.md$/" }
-      }
-      sort: { order: ASC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            index
-            title
-            icon
-            description
-          }
-        }
-      }
-    }
-    allTeamMarkdownRemark: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(/_collections/team)/.*\\.md$/" } }
-      sort: { order: ASC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            avatar
-            role
-            linkedin
-            bio
-          }
-        }
-      }
-    }
-  }
-`;

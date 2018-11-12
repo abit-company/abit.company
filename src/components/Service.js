@@ -1,31 +1,17 @@
-// @flow
+import React from 'react';
+import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
-import React from "react";
-import styled from "styled-components";
-
-type Props = {
-  service: {
-    id: string,
-    frontmatter: {
-      index: number,
-      title: string,
-      iconUrl: string,
-      description: string
-    }
-  }
-};
-
-const Service = ({
-  className,
-  service: { id, frontmatter: { index, icon, title: name, description } }
-}: Props) => (
-  <Wrapper className={className}>
+const Service = ({ icon, title, description }) => (
+  <Wrapper>
     <IconContainer>
-      <Icon src={icon} alt={`${name} icon`} />
+      <Icon src={`../img/${icon}`} alt={`${title} icon`} />
     </IconContainer>
 
     <TextContainer>
-      <Name>{name}</Name>
+      <Name>{title}</Name>
       <Description>{description}</Description>
     </TextContainer>
   </Wrapper>
@@ -104,4 +90,4 @@ const Description = styled.p`
   line-height: 1.4em;
 `;
 
-export default styled(Service)``;
+export default Service;

@@ -1,14 +1,7 @@
-// @flow
-
-import React, { type Node } from "react";
+import React from "react";
 import styled from "styled-components";
 
-type Props = {
-  children: Node,
-  className: string
-};
-
-const Navigation = ({ className, children }: Props) => (
+const Navigation = ({ className, children }) => (
   <Nav className={className}>
     <ul>{children}</ul>
   </Nav>
