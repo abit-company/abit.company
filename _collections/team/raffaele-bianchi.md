@@ -1,8 +1,0 @@
----
-index: '1'
-avatar: /assets/raffaele-bianchi-avatar.png
-title: Raffaele
-role: CEO
-linkedin: 'https://www.linkedin.com/in/bianchiraffaele/'
-bio: Ideas are cheap, execution is everything
----

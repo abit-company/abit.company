@@ -1,100 +1,72 @@
-import React, { Fragment } from "react";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import Header from "components/Header";
-import Service from "components/Service";
-import TeamMember from "components/TeamMember";
-import Footer from "components/Footer";
-import SocialIcon from "components/SocialIcon";
-import ScrollableAnchor from "react-scrollable-anchor";
-import SubscriptionForm from "../components/SubscriptionForm";
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import Header from '../components/Header';
+import Service from '../components/Service';
+import TeamMember from '../components/TeamMember';
+import Footer from '../components/Footer';
+import SocialIcon from '../components/SocialIcon';
+import Layout from '../components/layout';
+import services from './services.json';
+import team from './team.json';
 
-type Props = {
-  data: {}
-};
-const IndexPage = ({ data }: Props) => (
-  <div>
-    <Header />
-    <ScrollableAnchor id="about-us">
-      <Section>
-        <Heading>About us</Heading>
-        <Description>
-          We love to solve the hardest problems, providing comprehensive
-          blockchain solutions dealing with technology, marketing, legal and
-          finance matters.<br /> We embrace each project with full commitment,
-          and we treat them as our very own.
-        </Description>
-      </Section>
-    </ScrollableAnchor>
-    <ScrollableAnchor id="services">
-      <Section>
-        <Heading>What we do</Heading>
-        <Services>
-          {data.allServicesMarkdownRemark.edges.map(({ node }) => (
-            <Service key={node.id} service={node} />
-          ))}
-        </Services>
-      </Section>
-    </ScrollableAnchor>
-    <ScrollableAnchor id="team">
-      <Section>
-        <Heading>Team</Heading>
-        <Team>
-          {data.allTeamMarkdownRemark.edges.map(({ node }) => (
-            <TeamMember key={node.id} member={node} />
-          ))}
-        </Team>
-      </Section>
-    </ScrollableAnchor>
-    <ScrollableAnchor id="contacts">
-      <Section>
-        <Heading>Contacts</Heading>
-        <SocialList>
-          <SocialLink
-            target="_blank"
-            href="https://www.facebook.com/abitcompany"
-          >
-            <SocialIcon
-              type="facebook"
-              color="#fff"
-              backgroundColor="#3B5998"
-            />
-          </SocialLink>
-          <SocialLink target="_blank" href="https://twitter.com/abitcompany">
-            <SocialIcon type="twitter" color="#fff" backgroundColor="#1DA1F2" />
-          </SocialLink>
-          <SocialLink
-            target="_blank"
-            href="https://www.linkedin.com/company/abitcompany/"
-          >
-            <SocialIcon
-              type="linkedin"
-              color="#fff"
-              backgroundColor="#0077B5"
-            />
-          </SocialLink>
-          <SocialLink target="_blank" href="https://medium.com/abitcompany">
-            <SocialIcon type="medium" color="#fff" backgroundColor="#1C1B1A" />
-          </SocialLink>
-          <SocialLink target="_blank" href="https://github.com/abit-company">
-            <SocialIcon type="github" color="#fff" backgroundColor="#191717" />
-          </SocialLink>
-        </SocialList>
-        <EmailLink target="_blank" href="mailto:info@abit.company">
-          info@abit.company
-        </EmailLink>
-      </Section>
-    </ScrollableAnchor>
+const IndexPage = () => (
+  <Layout>
+    <Section>
+      <Heading>About us</Heading>
+      <Description>
+        We love to solve the hardest problems, providing comprehensive
+        blockchain solutions dealing with technology, marketing, legal and
+        finance matters.
+        <br /> We embrace each project with full commitment, and we treat them
+        as our very own.
+      </Description>
+    </Section>
+    <Section>
+      <Heading>What we do</Heading>
+      <Services>
+        {services.serviceList.map(service => (
+          <Service key={service.title} service={service} />
+        ))}
+      </Services>
+    </Section>
+    <Section>
+      <Heading>Team</Heading>
+      <Team>
+        {team.teamMembers.map(team => (
+          <TeamMember key={team.name} member={team} />
+        ))}
+      </Team>
+    </Section>
+    <Section>
+      <Heading>Contacts</Heading>
+      <SocialList>
+        <SocialLink target="_blank" href="https://www.facebook.com/abitcompany">
+          <SocialIcon type="facebook" color="#fff" backgroundColor="#3B5998" />
+        </SocialLink>
+        <SocialLink target="_blank" href="https://twitter.com/abitcompany">
+          <SocialIcon type="twitter" color="#fff" backgroundColor="#1DA1F2" />
+        </SocialLink>
+        <SocialLink
+          target="_blank"
+          href="https://www.linkedin.com/company/abitcompany/"
+        >
+          <SocialIcon type="linkedin" color="#fff" backgroundColor="#0077B5" />
+        </SocialLink>
+        <SocialLink target="_blank" href="https://medium.com/abitcompany">
+          <SocialIcon type="medium" color="#fff" backgroundColor="#1C1B1A" />
+        </SocialLink>
+        <SocialLink target="_blank" href="https://github.com/abit-company">
+          <SocialIcon type="github" color="#fff" backgroundColor="#191717" />
+        </SocialLink>
+      </SocialList>
+      <EmailLink target="_blank" href="mailto:info@abit.company">
+        info@abit.company
+      </EmailLink>
+    </Section>
     <Footer />
-  </div>
+  </Layout>
 );
-
-const SubscriptionContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin: 40px 0;
-`;
 
 const Section = styled.section`
   width: 100%;
@@ -169,7 +141,7 @@ const Team = styled.div`
     width: 100%;
   }
 
-  ${TeamMember} {
+  ${ TeamMember } {
     flex-basis: 25%;
     @media (max-width: 800px) {
       flex-basis: 33%;
@@ -204,43 +176,3 @@ const SocialLink = styled.a`
 `;
 
 export default IndexPage;
-
-export const query = graphql`
-  query HomePageQuery {
-    allServicesMarkdownRemark: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(/_collections/services)/.*\\.md$/" }
-      }
-      sort: { order: ASC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            index
-            title
-            icon
-            description
-          }
-        }
-      }
-    }
-    allTeamMarkdownRemark: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(/_collections/team)/.*\\.md$/" } }
-      sort: { order: ASC, fields: [frontmatter___index] }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            avatar
-            role
-            linkedin
-            bio
-          }
-        }
-      }
-    }
-  }
-`;

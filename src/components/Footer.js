@@ -1,9 +1,7 @@
-// @flow
-
-import React from "react";
-import styled from "styled-components";
-import Navigation, { NavigationItem } from "components/Navigation";
-import logo from "images/logo.svg";
+import React from 'react';
+import styled from 'styled-components';
+import Navigation, { NavigationItem } from '../components/Navigation';
+import logo from '../images/logo.svg';
 
 const Footer = () => (
   <Wrapper>
@@ -15,9 +13,8 @@ const Footer = () => (
         <NavigationItem to="#team">Team</NavigationItem>
         <NavigationItem to="#contacts">Contacts</NavigationItem>
       </Navigation>
-      { /*<CompanyInfo>abitcompany</CompanyInfo> */}
+      {/* <CompanyInfo>abitcompany</CompanyInfo> */}
       <Copyright>© 2018 abitcompany - P.I.: 02928220306</Copyright>
-
     </Column>
   </Wrapper>
 );
@@ -25,7 +22,7 @@ const Footer = () => (
 const Wrapper = styled.footer`
   background-color: #000629;
   margin-top: 60px;
-  ${Navigation} {
+  ${ Navigation } {
     margin-top: 115px;
     @media (max-width: 700px) {
       display: none;
@@ -53,7 +50,7 @@ const Column = styled.div`
 `;
 
 const Logo = styled.div.attrs({
-  children: ({ src, alt }) => <img src={src} alt={alt} />
+  children: ({ src, alt }) => <img src={src} alt={alt} />,
 })`
   width: 240px;
   padding-top: 100px;
@@ -71,7 +68,6 @@ const CompanyInfo = styled.div`
   font-weight: 700;
 `;
 
-
 const Copyright = styled.div`
   color: #fff;
   letter-spacing: 0.06em;
@@ -80,6 +76,6 @@ const Copyright = styled.div`
   padding-top: 120px;
   padding-bottom: 20px;
   text-align: center;
-`
+`;
 
 export default Footer;

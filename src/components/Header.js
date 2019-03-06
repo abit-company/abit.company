@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import logo from "images/logo.svg";
-import Navigation, { NavigationItem } from "components/Navigation";
-import headerIllustration from "./header-illustration.svg";
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components/macro';
+import logo from '../images/logo.svg';
+import Navigation, { NavigationItem } from './Navigation';
+import headerIllustration from '../images/header-illustration.svg';
 
 const Header = () => (
   <Wrapper>
@@ -14,6 +14,10 @@ const Header = () => (
         <NavigationItem to="#services">Services</NavigationItem>
         <NavigationItem to="#team">Team</NavigationItem>
         <NavigationItem to="#contacts">Contacts</NavigationItem>
+        <BadgeContainer>
+          <Badge>new!</Badge>
+          <NavigationItem to="/academy">Book</NavigationItem>
+        </BadgeContainer>
       </Navigation>
       <TagLine>
         Building the future <br /> one bit at a time
@@ -22,12 +26,27 @@ const Header = () => (
   </Wrapper>
 );
 
+const BadgeContainer = styled.div`
+  display: inline-block;
+  position: relative;
+`;
+
+const Badge = styled.div`
+  font-size: 0.9em;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: #ffff00;
+  padding: 2px 5px;
+  border-radius: 5px;
+`;
+
 const Wrapper = styled.header`
   background-color: #000629;
-  background-image: url("${headerIllustration}");
+  background-image: url("${ headerIllustration }");
   background-position: right;
   background-repeat: no-repeat;
-  ${Navigation} {
+  ${ Navigation } {
     margin-top: 50px;
     @media (max-width: 700px) {
       display: none;
@@ -55,7 +74,7 @@ const Column = styled.div`
 `;
 
 const Logo = styled.div.attrs({
-  children: ({ src, alt }) => <img src={src} alt={alt} />
+  children: ({ src, alt }) => <img src={src} alt={alt} />,
 })`
   width: 220px;
   padding-top: 40px;

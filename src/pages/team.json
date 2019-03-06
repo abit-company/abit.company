@@ -1,0 +1,53 @@
+{
+  "teamMembers": [
+    {
+      "avatar": "andrea-fantin-avatar.png",
+      "name": "Andrea",
+      "role": "CFO",
+      "linkedin": "https://www.linkedin.com/in/andrea-fantin-7399ba115/",
+      "bio": "I've run the numbers.. we'll be profitable, I promise!"
+    },
+    {
+      "avatar": "federico-badini-avatar.png",
+      "name": "Federico",
+      "role": "Software Engineer",
+      "linkedin": "https://www.linkedin.com/in/federicobadini/",
+      "bio": "I'm a robot. You won't stop me with a CAPTCHA"
+    },
+    {
+      "avatar": "gianluca-chiap-avatar.png",
+      "name": "Gianluca",
+      "role": "CTO",
+      "linkedin": "https://www.linkedin.com/in/gianluca-chiap-521986a8/",
+      "bio": "Programming is an art"
+    },
+    {
+      "avatar": "jacopo-ranalli-avatar.png",
+      "name": "Jacopo",
+      "role": "Business Development",
+      "linkedin": "https://www.linkedin.com/in/jacopo-ranalli/",
+      "bio": "Go lean or go home"
+    },
+    {
+      "avatar": "massimo-de-marchi-avatar.png",
+      "name": "Massimo",
+      "role": "Software Engineer",
+      "linkedin": "https://www.linkedin.com/in/massimodemarchi/",
+      "bio": "If you gaze for long into code, code gazes also into you"
+    },
+    {
+      "avatar": "mattia-marcon-avatar.png",
+      "name": "Mattia",
+      "role": "UX / UI Designer",
+      "linkedin": "https://www.linkedin.com/in/mattiamarcon/",
+      "bio": "If you have to explain it, it is not that good"
+    },
+    {
+      "avatar": "raffaele-bianchi-avatar.png",
+      "name": "Raffaele",
+      "role": "CEO",
+      "linkedin": "https://www.linkedin.com/in/bianchiraffaele/",
+      "bio": "Ideas are cheap, execution is everything"
+    }
+  ]
+}

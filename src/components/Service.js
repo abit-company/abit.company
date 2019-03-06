@@ -1,31 +1,14 @@
-// @flow
+import React from 'react';
+import styled from 'styled-components/macro';
 
-import React from "react";
-import styled from "styled-components";
-
-type Props = {
-  service: {
-    id: string,
-    frontmatter: {
-      index: number,
-      title: string,
-      iconUrl: string,
-      description: string
-    }
-  }
-};
-
-const Service = ({
-  className,
-  service: { id, frontmatter: { index, icon, title: name, description } }
-}: Props) => (
+const Service = ({ className, service: { icon, title, description } }) => (
   <Wrapper className={className}>
     <IconContainer>
-      <Icon src={icon} alt={`${name} icon`} />
+      <Icon src={`/assets/images/${ icon }`} alt={`${ title } icon`} />
     </IconContainer>
 
     <TextContainer>
-      <Name>{name}</Name>
+      <Name>{title}</Name>
       <Description>{description}</Description>
     </TextContainer>
   </Wrapper>
