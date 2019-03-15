@@ -6,12 +6,13 @@ import Footer from '../components/Footer';
 
 const theme = {
   mainColor: '#0c35fb',
+  textColorLight: '#fff',
 };
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <ThemeProvider theme={theme}>
     <>
-      <Header />
+      <Header location={location} />
       <main>{children}</main>
       <Footer />
       <GlobalStyle />

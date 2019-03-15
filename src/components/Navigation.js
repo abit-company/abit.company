@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Navigation = ({ className, children }) => (
   <Nav className={className}>
@@ -19,7 +20,7 @@ const Nav = styled.nav`
 
 export const NavigationItem = ({ to, children }) => (
   <Li>
-    <a href={to}>{children}</a>
+    <Link to={to}>{children}</Link>
   </Li>
 );
 
@@ -34,7 +35,7 @@ const Li = styled.li`
       background: #fff;
       opacity: 0;
       bottom: -5px;
-      content: "";
+      content: '';
       height: 2px;
       left: 50%;
       position: absolute;

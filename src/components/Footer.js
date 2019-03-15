@@ -8,12 +8,11 @@ const Footer = () => (
     <Column>
       <Logo src={logo} alt="abit company logo" />
       <Navigation>
-        <NavigationItem to="#about-us">About us</NavigationItem>
-        <NavigationItem to="#services">Services</NavigationItem>
-        <NavigationItem to="#team">Team</NavigationItem>
-        <NavigationItem to="#contacts">Contacts</NavigationItem>
+        <NavigationItem to="/#about-us">About us</NavigationItem>
+        <NavigationItem to="/#services">Services</NavigationItem>
+        <NavigationItem to="/#team">Team</NavigationItem>
+        <NavigationItem to="/#contacts">Contacts</NavigationItem>
       </Navigation>
-      {/* <CompanyInfo>abitcompany</CompanyInfo> */}
       <Copyright>© 2018 abitcompany - P.I.: 02928220306</Copyright>
     </Column>
   </Wrapper>
@@ -22,7 +21,7 @@ const Footer = () => (
 const Wrapper = styled.footer`
   background-color: #000629;
   margin-top: 60px;
-  ${ Navigation } {
+  ${Navigation} {
     margin-top: 115px;
     @media (max-width: 700px) {
       display: none;

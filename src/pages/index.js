@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Header from '../components/Header';
 import Service from '../components/Service';
 import TeamMember from '../components/TeamMember';
-import Footer from '../components/Footer';
 import SocialIcon from '../components/SocialIcon';
 import Layout from '../components/layout';
 import services from './services.json';
 import team from './team.json';
-
+import headerIllustration from '../images/header-illustration.svg';
 const IndexPage = () => (
-  <Layout>
-    <Section>
+  <Layout location="/">
+    <Hero />
+    <HeroMessageContainer>
+      <HeroMessage>
+        Building the future <br /> one bit at a time
+      </HeroMessage>
+    </HeroMessageContainer>
+    <Section id="about">
       <Heading>About us</Heading>
       <Description>
         We love to solve the hardest problems, providing comprehensive
@@ -22,7 +26,7 @@ const IndexPage = () => (
         as our very own.
       </Description>
     </Section>
-    <Section>
+    <Section id="services">
       <Heading>What we do</Heading>
       <Services>
         {services.serviceList.map(service => (
@@ -30,7 +34,7 @@ const IndexPage = () => (
         ))}
       </Services>
     </Section>
-    <Section>
+    <Section id="team">
       <Heading>Team</Heading>
       <Team>
         {team.teamMembers.map(team => (
@@ -38,7 +42,7 @@ const IndexPage = () => (
         ))}
       </Team>
     </Section>
-    <Section>
+    <Section id="contacts">
       <Heading>Contacts</Heading>
       <SocialList>
         <SocialLink target="_blank" href="https://www.facebook.com/abitcompany">
@@ -64,9 +68,58 @@ const IndexPage = () => (
         info@abit.company
       </EmailLink>
     </Section>
-    <Footer />
   </Layout>
 );
+
+const HeroMessageContainer = styled.div`
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 600px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+`;
+const HeroMessage = styled.h1`
+  color: #fff;
+  font-size: 56px;
+  padding-top: 130px;
+  padding-bottom: 300px;
+  line-height: 70px;
+  @media (max-width: 600px) {
+    font-size: 40px;
+    line-height: 50px;
+    padding-top: 150px;
+    padding-bottom: 180px;
+  }
+  @media (max-width: 450px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+`;
+
+const Hero = styled.div`
+  background-color: #000629;
+  background-image: url("${headerIllustration}");
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 80vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+
+  @media (max-width: 800px) {
+    background-size: cover;
+  }
+`;
 
 const Section = styled.section`
   width: 100%;
@@ -141,7 +194,7 @@ const Team = styled.div`
     width: 100%;
   }
 
-  ${ TeamMember } {
+  ${TeamMember} {
     flex-basis: 25%;
     @media (max-width: 800px) {
       flex-basis: 33%;
