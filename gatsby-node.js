@@ -1,22 +1,10 @@
-/**
-j* Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
 
-const { resolve } = require("path");
-
-exports.modifyBabelrc = ({ babelrc }) => ({
-  ...babelrc,
-  presets: babelrc.presets.concat(["flow"])
-});
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  config.merge({
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
     resolve: {
-      root: resolve(__dirname, "./src"),
-      extensions: ["", ".js", ".jsx", ".json"]
-    }
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.json'],
+    },
   });
-  return config;
 };
