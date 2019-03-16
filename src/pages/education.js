@@ -58,8 +58,7 @@ const AcademyPage = ({ data }) => (
                       <div>
                         <Bullet height="30px" style={{ marginRight: '15px' }} />
                       </div>
-
-                      <span>{chapter.title}</span>
+                      {chapter.title}
                     </Chapter>
                   ))}
               </ChaptersList>
@@ -73,7 +72,7 @@ const AcademyPage = ({ data }) => (
                       <div>
                         <Bullet height="30px" style={{ marginRight: '15px' }} />
                       </div>
-                      <span>{chapter.title}</span>
+                      {chapter.title}
                     </Chapter>
                   ))}
               </ChaptersList>
@@ -86,7 +85,7 @@ const AcademyPage = ({ data }) => (
                   <div>
                     <Bullet height="30px" style={{ marginRight: '15px' }} />
                   </div>
-                  <span>{chapter.title}</span>
+                  {chapter.title}
                 </Chapter>
               ))}
             </ChaptersList>
@@ -122,7 +121,6 @@ const ChaptersContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
 `;
 const ChaptersList = styled.div`
   display: flex;
@@ -144,16 +142,19 @@ const BookIntro = styled.p`
   font-style: italic;
   font-size: 20px;
   @media (max-width: 840px) {
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
     margin: 20px 0;
   }
 `;
 const BuyLink = styled.a`
   width: 150px;
   display: block;
-
   img {
     width: 100%;
+  }
+  @media (max-width: 840px) {
+    width: 110px;
   }
 `;
 
@@ -163,6 +164,9 @@ const DescriptionContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 840px) {
+    margin-left: 0;
+  }
 `;
 
 const Container = styled.div`
@@ -191,6 +195,9 @@ const BookImage = styled(Img)`
   width: 450px;
   @media (max-width: 960px) {
     width: 400px;
+  }
+  @media (max-width: 600px) {
+    width: 300px;
   }
 `;
 
