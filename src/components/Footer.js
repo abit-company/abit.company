@@ -2,25 +2,47 @@ import React from 'react';
 import styled from 'styled-components';
 import Navigation, { NavigationItem } from '../components/Navigation';
 import logo from '../images/logo.svg';
+import { Link } from 'gatsby';
 
 const Footer = () => (
   <Wrapper>
     <Column>
-      <Logo src={logo} alt="abit company logo" />
+      <Link to="/">
+        <Logo src={logo} alt="abit company logo" />
+      </Link>
       <Navigation>
         <NavigationItem to="/#about-us">About us</NavigationItem>
         <NavigationItem to="/#services">Services</NavigationItem>
         <NavigationItem to="/#team">Team</NavigationItem>
         <NavigationItem to="/#contacts">Contacts</NavigationItem>
+        <BadgeContainer>
+          <Badge>new!</Badge>
+          <NavigationItem to="/education">Book</NavigationItem>
+        </BadgeContainer>
       </Navigation>
       <Copyright>© 2018 abitcompany - P.I.: 02928220306</Copyright>
     </Column>
   </Wrapper>
 );
 
+const BadgeContainer = styled.div`
+  display: inline-block;
+  position: relative;
+`;
+
+const Badge = styled.div`
+  font-size: 0.9em;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: #ffff00;
+  padding: 3px 7px;
+  border-radius: 6px;
+`;
+
 const Wrapper = styled.footer`
   background-color: #000629;
-  margin-top: 60px;
+  /* margin-top: 60px; */
   ${Navigation} {
     margin-top: 115px;
     @media (max-width: 700px) {

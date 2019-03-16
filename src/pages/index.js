@@ -42,7 +42,7 @@ const IndexPage = () => (
         ))}
       </Team>
     </Section>
-    <Section id="contacts">
+    <Section id="contacts" style={{ marginBottom: '60px' }}>
       <Heading>Contacts</Heading>
       <SocialList>
         <SocialLink target="_blank" href="https://www.facebook.com/abitcompany">

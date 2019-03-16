@@ -4,13 +4,7 @@ import styled, { css } from 'styled-components/macro';
 import logo from '../images/logo.svg';
 import Navigation, { NavigationItem } from './Navigation';
 import MenuIcon from './MenuIcon';
-
-function handleScroll(id) {
-  console.log(id);
-  const el = document.getElementById(id);
-  console.log(el);
-  el.scrollIntoView(true);
-}
+import handleScroll from 'utils/scroll';
 
 export default function Header({ location }) {
   const [isSidebar, setIsSidebar] = useState(0);
@@ -21,16 +15,22 @@ export default function Header({ location }) {
           <Logo src={logo} alt="abit company logo" />
         </Link>
         <Navigation>
-          <NavigationItem onClick={handleScroll('about')} to="/#about-us">
+          <NavigationItem onClick={() => handleScroll('about')} to="/#about-us">
             About us
           </NavigationItem>
-          <NavigationItem onClick={handleScroll('services')} to="/#services">
+          <NavigationItem
+            onClick={() => handleScroll('services')}
+            to="/#services"
+          >
             Services
           </NavigationItem>
-          <NavigationItem onClick={handleScroll('team')} to="/#team">
+          <NavigationItem onClick={() => handleScroll('team')} to="/#team">
             Team
           </NavigationItem>
-          <NavigationItem onClick={handleScroll('contacts')} to="/#contacts">
+          <NavigationItem
+            onClick={() => handleScroll('contacts')}
+            to="/#contacts"
+          >
             Contacts
           </NavigationItem>
           <BadgeContainer>
